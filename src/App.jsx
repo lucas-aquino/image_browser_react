@@ -60,6 +60,7 @@ function App() {
       'grid-cols-4', 
       'gap-x-4',
       'gap-y-6',
+      'pt-5'
     ].join(' '),
     card: [
       'bg-slate-800',
@@ -71,12 +72,16 @@ function App() {
       'justify-between'
     ].join(' '),
     cardImageContainer: [
-      'h-full'
+      'h-full',
     ].join(' '),
     cardImage: [
-      'h-full',
-      'w-auto'
+      'object-cover',
+      'h-full'
     ].join(' '),
+    cardImageBody: [
+      'py-5',
+      'px-3'
+    ].join(' ')
   }
 
   console.log(photos)
@@ -112,7 +117,7 @@ function App() {
               <div className={styles.cardImageContainer}>
                 <img className={styles.cardImage} src={photo.urls.regular} alt={photo.alt_description} />
               </div>
-              <div>
+              <div className={styles.cardImageBody}>
                 <p>{[photo.description, photo.alt_description].join(' ')}</p> 
               </div>
             </article>
